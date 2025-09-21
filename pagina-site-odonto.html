@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clínica Sorriso Santos | Odontologia Integrada</title>
+    <meta name="description" content="Clínica odontológica completa em Santos. Implantes, ortodontia, estética e atendimento humanizado. Agende sua avaliação." />
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context":"https://schema.org",
+        "@type":"Dentist",
+        "name":"Clínica Sorriso Santos",
+        "address":{
+          "@type":"PostalAddress",
+          "streetAddress":"Av. Exemplo, 123",
+          "addressLocality":"Santos",
+          "addressRegion":"SP",
+          "postalCode":"11000-000",
+          "addressCountry":"BR"
+        },
+        "telephone":"+55 13 99999-9999",
+        "url":"https://victorrodriguesmkt.github.io/landing-page/",
+        "openingHours":"Mo-Fr 09:00-19:00",
+        "image":"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop"
+      }
+    </script>
+  </head>
+  <body class="bg-white text-slate-800">
+    
+    <!-- Barra de aviso -->
+    <div class="w-full bg-emerald-600 text-white text-center text-sm py-2">
+      Atendimento com hora marcada • Avaliação gratuita • Financiamento em até 24x
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">CS</div>
+            <div class="leading-tight">
+              <p class="font-semibold">Clínica Sorriso Santos</p>
+              <p class="text-xs text-slate-500">Odontologia Integrada</p>
+            </div>
+          </div>
+          <nav class="hidden md:flex items-center gap-6 text-sm">
+            <a href="#servicos" class="hover:text-emerald-700">Serviços</a>
+            <a href="#sobre" class="hover:text-emerald-700">Sobre</a>
+            <a href="#equipe" class="hover:text-emerald-700">Equipe</a>
+            <a href="#depoimentos" class="hover:text-emerald-700">Depoimentos</a>
+            <a href="#contato" class="hover:text-emerald-700">Contato</a>
+            <a href="#agendar" class="px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition">Agendar</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2000&auto=format&fit=crop"
+        alt="Consultório odontológico moderno"
+        class="w-full h-[52vh] sm:h-[64vh] object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+      <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-10">
+        <div class="text-white max-w-2xl">
+          <h1 class="text-3xl sm:text-5xl font-bold leading-tight">
+            Sorria com confiança. <span class="text-emerald-300">Cuidamos de você</span> do começo ao fim.
+          </h1>
+          <p class="mt-4 text-sm sm:text-base text-slate-200">
+            Implantes, ortodontia e estética em um só lugar, com tecnologia e atendimento humanizado em Santos.
+          </p>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a href="#agendar" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-center">Agendar avaliação</a>
+            <a href="#servicos" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-center border border-white/20">Conhecer serviços</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl sm:text-3xl font-semibold">Nossas especialidades</h2>
+      <p class="text-slate-600 mt-2 max-w-2xl">Tratamentos planejados com foco em estética, função e longevidade.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="border rounded-2xl p-6 bg-white">
+          <h3 class="font-semibold text-lg">Implantes Dentários</h3>
+          <p class="text-sm text-slate-600 mt-2">Reposição fixa do dente com segurança e naturalidade.</p>
+        </div>
+        <div class="border rounded-2xl p-6 bg-white">
+          <h3 class="font-semibold text-lg">Clareamento Dental</h3>
+          <p class="text-sm text-slate-600 mt-2">Técnicas em consultório e/ou moldeira para um sorriso mais branco.</p>
+        </div>
+        <div class="border rounded-2xl p-6 bg-white">
+          <h3 class="font-semibold text-lg">Aparelho/Alinhadores</h3>
+          <p class="text-sm text-slate-600 mt-2">Ortodontia tradicional e alinhadores invisíveis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="agendar" class="py-16 bg-slate-50 text-center">
+      <h2 class="text-2xl sm:text-3xl font-semibold">Agende sua avaliação</h2>
+      <p class="mt-2 text-slate-600">Envie seus dados que nossa equipe retorna confirmando.</p>
+      <div class="mt-6 flex justify-center gap-3">
+        <a href="https://wa.me/5513999999999?text=Olá! Quero agendar uma avaliação."
+          class="px-4 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700">WhatsApp</a>
+        <a href="tel:+551333000000" class="px-4 py-3 rounded-xl border">Ligar agora</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t text-center">
+      <p class="font-semibold">Clínica Sorriso Santos</p>
+      <p class="text-sm text-slate-600 mt-2">Cuidamos do seu sorriso com tecnologia, segurança e carinho.</p>
+      <p class="text-xs text-slate-500 mt-4">© 2025 Clínica Sorriso Santos. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
