@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
     <title>Clínica Sorriso Santos | Odontologia Integrada</title>
     <meta name="description" content="Clínica odontológica completa em Santos. Implantes, ortodontia, estética e atendimento humanizado. Agende sua avaliação." />
     <link rel="icon" href="/favicon.ico" />
 
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Open Graph / SEO básico -->
+    <meta property="og:title" content="Clínica Sorriso Santos | Odontologia Integrada" />
+    <meta property="og:description" content="Implantes, ortodontia e estética com tecnologia e atendimento humanizado em Santos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1631217870929-16b1e6c6900b?q=80&w=1600&auto=format&fit=crop" />
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -27,229 +34,281 @@
   "telephone": "+55 13 99999-9999",
   "url": "https://exemplo.com",
   "openingHours": "Mo-Fr 09:00-19:00",
-  "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop"
+  "image": "https://images.unsplash.com/photo-1631217870929-16b1e6c6900b?q=80&w=1600&auto=format&fit=crop"
 }
     </script>
+
     <style>
-      /* Ajustes de foco para acessibilidade em teclas */
-      :focus-visible { outline: 2px solid #059669; outline-offset: 2px; }
+      :root{
+        --brand-1:#8bd3dd; /* pastel cyan */
+        --brand-2:#c1e6cf; /* pastel green */
+        --brand-3:#fde2e4; /* pastel rose */
+      }
+      :focus-visible{outline:2px solid #22c55e; outline-offset: 3px}
+      html{scroll-behavior:smooth}
+      .reveal{opacity:0; transform: translateY(16px); transition: all .6s ease}
+      .reveal.show{opacity:1; transform: translateY(0)}
+      @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none} }
+      .card{position:relative}
+      .card:before{content:""; position:absolute; inset:0; border-radius: 1.25rem; padding:1px; background:linear-gradient(120deg,var(--brand-1),var(--brand-2)); -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude}
+      .min-w-0{min-width:0}
     </style>
   </head>
-  <body class="min-h-screen bg-white text-slate-800">
-    <!-- Barra de Aviso -->
-    <div class="w-full bg-emerald-600 text-white text-center text-sm py-2">
+  <body class="min-h-screen bg-gradient-to-br from-[#fafafa] via-[#f7fbff] to-[#fef6f6] text-slate-800">
+    <!-- background blobs -->
+    <div aria-hidden class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#c1e6cf] blur-3xl opacity-40"></div>
+      <div class="absolute -bottom-24 -right-24 h-80 w-80 rounded-full bg-[#8bd3dd] blur-3xl opacity-40"></div>
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 h-64 w-64 rounded-full bg-[#fde2e4] blur-3xl opacity-30"></div>
+    </div>
+
+    <!-- Top bar -->
+    <div class="w-full bg-gradient-to-r from-teal-400/90 via-sky-300/90 to-rose-300/90 text-slate-800 text-center text-sm py-2">
       Atendimento com hora marcada • Avaliação gratuita • Financiamento em até 24x
     </div>
 
     <!-- Header -->
-    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-xl border-b border-white/50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold">CS</div>
-            <div class="leading-tight">
+        <div class="flex items-center justify-between h-16 min-w-0">
+          <a href="#" class="flex items-center gap-3 min-w-0">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-teal-400 to-emerald-500 flex items-center justify-center text-white font-bold shadow shrink-0">CS</div>
+            <div class="leading-tight truncate">
               <p class="font-semibold">Clínica Sorriso Santos</p>
               <p class="text-xs text-slate-500">Odontologia Integrada</p>
             </div>
-          </div>
+          </a>
           <nav class="hidden md:flex items-center gap-6 text-sm">
-            <a href="#servicos" class="hover:text-emerald-700">Serviços</a>
-            <a href="#sobre" class="hover:text-emerald-700">Sobre</a>
-            <a href="#equipe" class="hover:text-emerald-700">Equipe</a>
-            <a href="#depoimentos" class="hover:text-emerald-700">Depoimentos</a>
-            <a href="#contato" class="hover:text-emerald-700">Contato</a>
-            <a href="#agendar" class="px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition">Agendar</a>
+            <a href="#servicos" class="hover:text-teal-700">Serviços</a>
+            <a href="#sobre" class="hover:text-teal-700">Sobre</a>
+            <a href="#equipe" class="hover:text-teal-700">Equipe</a>
+            <a href="#depoimentos" class="hover:text-teal-700">Depoimentos</a>
+            <a href="#duvidas" class="hover:text-teal-700">Dúvidas</a>
+            <a href="#contato" class="px-4 py-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white shadow hover:opacity-90 transition">Agendar</a>
           </nav>
-          <a href="#agendar" class="md:hidden inline-flex px-3 py-2 rounded-lg bg-emerald-600 text-white">Agendar</a>
+          <a href="#contato" class="md:hidden inline-flex px-3 py-2 rounded-lg bg-gradient-to-r from-teal-400 to-emerald-500 text-white shadow">Agendar</a>
         </div>
       </div>
     </header>
 
     <!-- Hero -->
     <section class="relative overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2000&auto=format&fit=crop" alt="Consultório odontológico moderno" class="w-full h-[52vh] sm:h-[64vh] object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-      <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-10">
+      <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1631217870929-16b1e6c6900b?q=80&w=2000&auto=format&fit=crop" alt="Consultório odontológico real" class="w-full h-[56vh] sm:h-[68vh] object-cover bg-[#e6f7f9]" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+      <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-12">
         <div class="text-white max-w-2xl">
-          <h1 class="text-3xl sm:text-5xl font-bold leading-tight">
-            Sorria com confiança. <span class="text-emerald-300">Cuidamos de você</span> do começo ao fim.
-          </h1>
-          <p class="mt-4 text-sm sm:text-base text-slate-200">
-            Implantes, ortodontia e estética em um só lugar, com tecnologia e atendimento humanizado em Santos.
-          </p>
+          <h1 class="text-4xl sm:text-6xl font-bold leading-tight drop-shadow">Sorria com leveza.<span class="block text-teal-200">Odontologia humana + tecnologia.</span></h1>
+          <p class="mt-4 text-base sm:text-lg text-slate-100/90">Implantes, ortodontia e estética em um só lugar, com experiência acolhedora em Santos.</p>
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="#agendar" class="px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-center">Agendar avaliação</a>
-            <a href="#servicos" class="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-center border border-white/20">Conhecer serviços</a>
+            <a href="#contato" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-500 hover:from-teal-500 hover:to-emerald-600 text-white font-medium shadow-lg ring-1 ring-white/20 text-center">Agendar avaliação</a>
+            <a href="#servicos" class="px-6 py-3 rounded-2xl bg-white/15 hover:bg-white/25 text-white font-medium text-center ring-1 ring-white/30">Conhecer serviços</a>
           </div>
         </div>
       </div>
+      <svg class="absolute bottom-0 left-0 w-full translate-y-1" viewBox="0 0 1440 90" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M0,64L60,58.7C120,53,240,43,360,42.7C480,43,600,53,720,69.3C840,85,960,107,1080,106.7C1200,107,1320,85,1380,74.7L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"/></svg>
     </section>
 
-    <!-- Provas rápidas -->
-    <section class="py-10 border-b bg-slate-50">
+    <!-- Métricas -->
+    <section class="py-12 bg-white/60" id="metricas">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
-          <p class="text-2xl font-bold text-emerald-700">15+</p>
+        <div class="card p-5 rounded-2xl bg-white shadow-sm text-center reveal">
+          <p class="text-3xl font-bold text-teal-600">15+</p>
           <p class="text-xs text-slate-500 mt-1">Anos de experiência</p>
         </div>
-        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
-          <p class="text-2xl font-bold text-emerald-700">8.000+</p>
+        <div class="card p-5 rounded-2xl bg-white shadow-sm text-center reveal">
+          <p class="text-3xl font-bold text-teal-600">8.000+</p>
           <p class="text-xs text-slate-500 mt-1">Pacientes atendidos</p>
         </div>
-        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
-          <p class="text-2xl font-bold text-emerald-700">4.9★</p>
+        <div class="card p-5 rounded-2xl bg-white shadow-sm text-center reveal">
+          <p class="text-3xl font-bold text-teal-600">4.9★</p>
           <p class="text-xs text-slate-500 mt-1">Avaliação média</p>
         </div>
-        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
-          <p class="text-2xl font-bold text-emerald-700">10+</p>
+        <div class="card p-5 rounded-2xl bg-white shadow-sm text-center reveal">
+          <p class="text-3xl font-bold text-teal-600">10+</p>
           <p class="text-xs text-slate-500 mt-1">Especialidades</p>
         </div>
       </div>
     </section>
 
     <!-- Serviços -->
-    <section id="servicos" class="py-16">
+    <section id="servicos" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Nossas especialidades</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold">Nossas especialidades</h2>
         <p class="text-slate-600 mt-2 max-w-2xl">Tratamentos planejados com foco em estética, função e longevidade. Escolha o que precisa ou fale com um especialista.</p>
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
-            <h3 class="font-semibold text-lg">Implantes Dentários</h3>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1200&auto=format&fit=crop" alt="Clínico realizando implante dentário" class="rounded-2xl h-44 w-full object-cover bg-[#eef7f8]"/>
+            <h3 class="mt-4 font-semibold text-lg">Implantes Dentários</h3>
             <p class="text-sm text-slate-600 mt-2">Reposição fixa do dente com segurança e naturalidade. Planejamento digital e carga imediata quando indicado.</p>
-            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
-          </div>
-          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
-            <h3 class="font-semibold text-lg">Clareamento Dental</h3>
+            <a href="#contato" class="mt-4 inline-flex items-center gap-1 text-teal-700 font-medium">Agendar consulta <span aria-hidden>→</span></a>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1599058917765-7db07a46c651?q=80&w=1200&auto=format&fit=crop" alt="Paciente realizando clareamento dental" class="rounded-2xl h-44 w-full object-cover bg-[#fff6f7]"/>
+            <h3 class="mt-4 font-semibold text-lg">Clareamento Dental</h3>
             <p class="text-sm text-slate-600 mt-2">Técnicas em consultório e/ou moldeira. Sorriso mais branco de forma segura e supervisionada.</p>
-            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
-          </div>
-          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
-            <h3 class="font-semibold text-lg">Aparelho/Alinhadores</h3>
+            <a href="#contato" class="mt-4 inline-flex items-center gap-1 text-teal-700 font-medium">Agendar consulta <span aria-hidden>→</span></a>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1609840114035-37f9f43a49ae?q=80&w=1200&auto=format&fit=crop" alt="Ortodontista ajustando aparelho/alinhador" class="rounded-2xl h-44 w-full object-cover bg-[#eef7ff]"/>
+            <h3 class="mt-4 font-semibold text-lg">Aparelhos e Alinhadores</h3>
             <p class="text-sm text-slate-600 mt-2">Ortodontia tradicional e alinhadores invisíveis. Correção de posição com conforto e previsibilidade.</p>
-            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
-          </div>
-          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
-            <h3 class="font-semibold text-lg">Lentes de Contato</h3>
+            <a href="#contato" class="mt-4 inline-flex items-center gap-1 text-teal-700 font-medium">Agendar consulta <span aria-hidden>→</span></a>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop" alt="Lentes de contato dental sendo preparadas" class="rounded-2xl h-44 w-full object-cover bg-[#fff2f3]"/>
+            <h3 class="mt-4 font-semibold text-lg">Lentes de Contato</h3>
             <p class="text-sm text-slate-600 mt-2">Facetas estéticas para formato, cor e harmonia do sorriso. Resultado rápido com mínimo desgaste.</p>
-            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
-          </div>
-          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
-            <h3 class="font-semibold text-lg">Endodontia (Canal)</h3>
+            <a href="#contato" class="mt-4 inline-flex items-center gap-1 text-teal-700 font-medium">Agendar consulta <span aria-hidden>→</span></a>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1629909816513-2b5f3762c25b?q=80&w=1200&auto=format&fit=crop" alt="Endodontia (canal) com equipamento moderno" class="rounded-2xl h-44 w-full object-cover bg-[#eefaf3]"/>
+            <h3 class="mt-4 font-semibold text-lg">Endodontia (Canal)</h3>
             <p class="text-sm text-slate-600 mt-2">Tratamento de canal com microscopia e anestesia computadorizada para máximo conforto.</p>
-            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
-          </div>
-          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
-            <h3 class="font-semibold text-lg">Odontopediatria</h3>
+            <a href="#contato" class="mt-4 inline-flex items-center gap-1 text-teal-700 font-medium">Agendar consulta <span aria-hidden>→</span></a>
+          </article>
+          <article class="group relative overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1614267862414-e1e7f7e1a3a2?q=80&w=1200&auto=format&fit=crop" alt="Odontopediatria lúdica com criança" class="rounded-2xl h-44 w-full object-cover bg-[#f6fbff]"/>
+            <h3 class="mt-4 font-semibold text-lg">Odontopediatria</h3>
             <p class="text-sm text-slate-600 mt-2">Acolhimento lúdico e preventivo para as crianças. Adaptação gradual e orientação aos pais.</p>
-            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
-          </div>
+            <a href="#contato" class="mt-4 inline-flex items-center gap-1 text-teal-700 font-medium">Agendar consulta <span aria-hidden>→</span></a>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Sobre -->
-    <section id="sobre" class="py-16 bg-slate-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
-        <img src="https://images.unsplash.com/photo-1583912267550-5660ab1614a7?q=80&w=1400&auto=format&fit=crop" alt="Equipe atendendo paciente" class="rounded-3xl object-cover w-full h-80" />
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-semibold">Humanização + tecnologia</h2>
+    <section id="sobre" class="py-20 bg-gradient-to-br from-white to-[#faf6f7]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+        <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1580281657527-47b6ce612ac1?q=80&w=1400&auto=format&fit=crop" alt="Equipe atendendo paciente com cuidado" class="rounded-3xl object-cover w-full h-80 shadow-md reveal bg-[#eef7ff]" />
+        <div class="reveal">
+          <h2 class="text-3xl sm:text-4xl font-semibold">Humanização + tecnologia</h2>
           <p class="text-slate-600 mt-3">Da recepção ao pós-atendimento, cada etapa foi pensada para que você se sinta seguro(a) e bem cuidado(a). Utilizamos scanners intraorais, radiografia digital e protocolos minimamente invasivos.</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-700">
-            <li>• Avaliação detalhada e plano de tratamento personalizado</li>
-            <li>• Opções de pagamento flexíveis e parcelamento</li>
-            <li>• Estrutura acessível e horário estendido</li>
+          <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Avaliação detalhada e plano de tratamento personalizado</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Opções de pagamento flexíveis e parcelamento</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Estrutura acessível e horário estendido</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Ambiente confortável e acolhedor</li>
           </ul>
         </div>
       </div>
     </section>
 
     <!-- Equipe -->
-    <section id="equipe" class="py-16">
+    <section id="equipe" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Conheça nossa equipe</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold">Conheça nossa equipe</h2>
         <p class="text-slate-600 mt-2">Especialistas comprometidos com qualidade clínica e atendimento acolhedor.</p>
-        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="border rounded-2xl overflow-hidden bg-white">
-            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop" alt="Dra. Ana Ribeiro" class="w-full h-56 object-cover" />
-            <div class="p-5">
-              <p class="font-semibold">Dra. Ana Ribeiro</p>
-              <p class="text-sm text-slate-600">Implantodontia | CRO 00000</p>
-            </div>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border rounded-3xl overflow-hidden bg-white shadow-sm reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1000&auto=format&fit=crop" alt="Dra. Ana Ribeiro" class="w-full h-56 object-cover bg-[#eef7ff]" />
+            <div class="p-5"><p class="font-semibold">Dra. Ana Ribeiro</p><p class="text-sm text-slate-600">Implantodontia | CRO 12345</p></div>
           </div>
-          <div class="border rounded-2xl overflow-hidden bg-white">
-            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop" alt="Dr. Pedro Costa" class="w-full h-56 object-cover" />
-            <div class="p-5">
-              <p class="font-semibold">Dr. Pedro Costa</p>
-              <p class="text-sm text-slate-600">Ortodontia | CRO 00000</p>
-            </div>
+          <div class="border rounded-3xl overflow-hidden bg-white shadow-sm reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop" alt="Dr. Pedro Costa" class="w-full h-56 object-cover bg-[#eef7ff]" />
+            <div class="p-5"><p class="font-semibold">Dr. Pedro Costa</p><p class="text-sm text-slate-600">Ortodontia | CRO 23456</p></div>
           </div>
-          <div class="border rounded-2xl overflow-hidden bg-white">
-            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=800&auto=format&fit=crop" alt="Dra. Luiza Martins" class="w-full h-56 object-cover" />
-            <div class="p-5">
-              <p class="font-semibold">Dra. Luiza Martins</p>
-              <p class="text-sm text-slate-600">Estética | CRO 00000</p>
-            </div>
+          <div class="border rounded-3xl overflow-hidden bg-white shadow-sm reveal">
+            <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=1000&auto=format&fit=crop" alt="Dra. Luiza Martins" class="w-full h-56 object-cover bg-[#fff6f7]" />
+            <div class="p-5"><p class="font-semibold">Dra. Luiza Martins</p><p class="text-sm text-slate-600">Estética | CRO 34567</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Depoimentos -->
-    <section id="depoimentos" class="py-16 bg-slate-50">
+    <!-- Depoimentos (slider) -->
+    <section id="depoimentos" class="py-20 bg-gradient-to-br from-[#f6fbff] to-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold">O que nossos pacientes dizem</h2>
-        <div class="mt-8 grid md:grid-cols-3 gap-6">
-          <div class="bg-white border rounded-2xl p-6">
-            <p class="text-sm text-emerald-700 font-medium">Clareamento e limpeza</p>
-            <p class="mt-2 text-slate-700">“Atendimento impecável do início ao fim. Resultado além do esperado!”</p>
-            <p class="mt-4 text-sm text-slate-500">— Mariana S.</p>
-          </div>
-          <div class="bg-white border rounded-2xl p-6">
-            <p class="text-sm text-emerald-700 font-medium">Implante unitário</p>
-            <p class="mt-2 text-slate-700">“Procedimento super tranquilo. Equipe atenciosa e estrutura moderna.”</p>
-            <p class="mt-4 text-sm text-slate-500">— Ricardo L.</p>
-          </div>
-          <div class="bg-white border rounded-2xl p-6">
-            <p class="text-sm text-emerald-700 font-medium">Alinhadores</p>
-            <p class="mt-2 text-slate-700">“Acompanhamento próximo e didático. Em poucas semanas já senti diferença.”</p>
-            <p class="mt-4 text-sm text-slate-500">— Beatriz A.</p>
-          </div>
+        <h2 class="text-3xl sm:text-4xl font-semibold">O que nossos pacientes dizem</h2>
+        <div class="mt-8 flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4">
+          <figure class="min-w-[320px] snap-start bg-white border rounded-3xl p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=160&auto=format&fit=crop" alt="Foto paciente" class="h-10 w-10 rounded-full object-cover"/>
+              <figcaption class="text-sm font-medium">Mariana S.</figcaption>
+            </div>
+            <p class="text-sm text-teal-700 font-medium mt-3">Clareamento e limpeza</p>
+            <blockquote class="mt-2 text-slate-700">“Atendimento impecável do início ao fim. Resultado além do esperado!”</blockquote>
+          </figure>
+          <figure class="min-w-[320px] snap-start bg-white border rounded-3xl p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=160&auto=format&fit=crop" alt="Foto paciente" class="h-10 w-10 rounded-full object-cover"/>
+              <figcaption class="text-sm font-medium">Ricardo L.</figcaption>
+            </div>
+            <p class="text-sm text-teal-700 font-medium mt-3">Implante unitário</p>
+            <blockquote class="mt-2 text-slate-700">“Procedimento super tranquilo. Equipe atenciosa e estrutura moderna.”</blockquote>
+          </figure>
+          <figure class="min-w-[320px] snap-start bg-white border rounded-3xl p-6 shadow-sm reveal">
+            <div class="flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=160&auto=format&fit=crop" alt="Foto paciente" class="h-10 w-10 rounded-full object-cover"/>
+              <figcaption class="text-sm font-medium">Beatriz A.</figcaption>
+            </div>
+            <p class="text-sm text-teal-700 font-medium mt-3">Alinhadores</p>
+            <blockquote class="mt-2 text-slate-700">“Acompanhamento próximo e didático. Em poucas semanas já senti diferença.”</blockquote>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- Planos / CTA -->
-    <section id="agendar" class="py-16">
+    <!-- Dúvidas frequentes (FAQ) -->
+    <section id="duvidas" class="py-20">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-semibold">Dúvidas frequentes</h2>
+        <div class="mt-8 divide-y rounded-2xl border bg-white/70 ring-1 ring-black/5">
+          <details class="group p-5" open>
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-medium">Como funciona a avaliação inicial?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-600">Fazemos anamnese, fotos e planejamento preliminar. Caso necessário, solicitamos exames complementares para um diagnóstico preciso.</p>
+          </details>
+          <details class="group p-5">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-medium">Vocês parcelam os tratamentos?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-600">Sim. Trabalhamos com parcelamento e condições especiais conforme o plano de tratamento.</p>
+          </details>
+          <details class="group p-5">
+            <summary class="cursor-pointer list-none flex items-center justify-between">
+              <span class="font-medium">Atendem crianças?</span>
+              <span class="transition group-open:rotate-180">⌄</span>
+            </summary>
+            <p class="mt-3 text-sm text-slate-600">Sim, temos odontopediatra e protocolo de ambientação lúdica.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato / Agendar -->
+    <section id="contato" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 class="text-2xl sm:text-3xl font-semibold">Agende sua avaliação</h2>
+          <div class="reveal">
+            <h2 class="text-3xl sm:text-4xl font-semibold">Agende sua avaliação</h2>
             <p class="mt-2 text-slate-600">Envie seus dados que nossa equipe retornará confirmando dia e horário. Se preferir, chame no WhatsApp.</p>
-            <div class="mt-6 p-5 border rounded-2xl bg-slate-50">
+            <div class="mt-6 p-5 border rounded-3xl bg-white/70 ring-1 ring-black/5">
               <p class="text-sm text-slate-600">Horários: Seg a Sex, 9h às 19h • Sáb, 9h às 13h</p>
               <p class="text-sm text-slate-600">Endereço: Av. Exemplo, 123 – Gonzaga, Santos/SP</p>
             </div>
             <div class="mt-6 flex gap-3">
-              <!-- TODO: Substitua o número pelo oficial da clínica -->
-              <a href="https://wa.me/5513999999999?text=Ol%C3%A1! Quero agendar uma avaliação." class="px-4 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700">WhatsApp</a>
-              <a href="tel:+551333000000" class="px-4 py-3 rounded-xl border">Ligar agora</a>
+              <a href="https://wa.me/5513999999999?text=Ol%C3%A1! Quero agendar uma avaliação." class="px-5 py-3 rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white shadow hover:opacity-90">WhatsApp</a>
+              <a href="tel:+551333000000" class="px-5 py-3 rounded-2xl border ring-1 ring-black/5 bg-white/70">Ligar agora</a>
             </div>
           </div>
 
-          <!-- Formulário -->
-          <form id="form-contato" class="bg-white border rounded-2xl p-6 shadow-sm" action="#" method="post">
+          <!-- Formulário (troque action por seu endpoint: Formspree ou API) -->
+          <form id="form-contato" class="bg-white border rounded-3xl p-6 shadow-sm ring-1 ring-black/5 reveal" action="#" method="post">
             <div class="grid sm:grid-cols-2 gap-4">
               <div>
                 <label for="nome" class="text-sm text-slate-600">Nome</label>
-                <input id="nome" name="nome" type="text" required class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Seu nome" />
+                <input id="nome" name="nome" type="text" required class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Seu nome" />
               </div>
               <div>
                 <label for="telefone" class="text-sm text-slate-600">Telefone/WhatsApp</label>
-                <input id="telefone" name="telefone" type="tel" required class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="(13) 9 0000-0000" />
+                <input id="telefone" name="telefone" type="tel" required class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="(13) 9 0000-0000" />
               </div>
               <div class="sm:col-span-2">
                 <label for="servico" class="text-sm text-slate-600">Serviço de interesse</label>
-                <select id="servico" name="servico" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                <select id="servico" name="servico" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
                   <option>Selecione…</option>
                   <option>Implantes</option>
                   <option>Clareamento</option>
@@ -261,10 +320,10 @@
               </div>
               <div class="sm:col-span-2">
                 <label for="mensagem" class="text-sm text-slate-600">Mensagem</label>
-                <textarea id="mensagem" name="mensagem" rows="4" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Conte rapidamente sua necessidade"></textarea>
+                <textarea id="mensagem" name="mensagem" rows="4" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="Conte rapidamente sua necessidade"></textarea>
               </div>
             </div>
-            <button type="submit" class="mt-4 w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white py-3">Enviar</button>
+            <button type="submit" class="mt-4 w-full rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-500 hover:opacity-90 text-white py-3">Enviar</button>
             <p class="text-xs text-slate-500 mt-2">Ao enviar, você concorda com nossa política de privacidade.</p>
           </form>
         </div>
@@ -272,19 +331,19 @@
     </section>
 
     <!-- Mapa -->
-    <section class="py-16 bg-slate-50">
+    <section class="py-20 bg-white/70">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl sm:text-3xl font-semibold">Como chegar</h2>
+        <h2 class="text-3xl sm:text-4xl font-semibold">Como chegar</h2>
         <p class="text-slate-600 mt-2">Estamos no coração de Santos, com fácil acesso e estacionamento conveniado.</p>
-        <div class="mt-6 aspect-video w-full rounded-2xl overflow-hidden border">
-          <!-- TODO: Substitua o src pelo embed do Google Maps da clínica -->
+        <div class="mt-6 aspect-video w-full rounded-3xl overflow-hidden ring-1 ring-black/5 bg-white">
+          <!-- Substitua pelo embed real da clínica -->
           <iframe title="Mapa da clínica" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.501679507749!2d-46.6388239!3d-23.5505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAyLjEiUyA0NsKwMzgnMjMuNyJX!5e0!3m2!1spt-BR!2sbr!4v1711212121212" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contato" class="py-12 border-t">
+    <footer class="py-12 border-t bg-white/80 backdrop-blur" id="rodape">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
         <div>
           <p class="font-semibold">Clínica Sorriso Santos</p>
@@ -303,19 +362,24 @@
         <div>
           <p class="font-medium">Links rápidos</p>
           <ul class="text-sm text-slate-600 mt-2 space-y-1">
-            <li><a class="hover:text-emerald-700" href="#servicos">Serviços</a></li>
-            <li><a class="hover:text-emerald-700" href="#sobre">Sobre</a></li>
-            <li><a class="hover:text-emerald-700" href="#equipe">Equipe</a></li>
-            <li><a class="hover:text-emerald-700" href="#agendar">Agendar</a></li>
+            <li><a class="hover:text-teal-700" href="#servicos">Serviços</a></li>
+            <li><a class="hover:text-teal-700" href="#sobre">Sobre</a></li>
+            <li><a class="hover:text-teal-700" href="#equipe">Equipe</a></li>
+            <li><a class="hover:text-teal-700" href="#contato">Agendar</a></li>
           </ul>
         </div>
       </div>
     </footer>
 
     <!-- Botão flutuante WhatsApp -->
-    <a href="https://wa.me/5513999999999?text=Ol%C3%A1! Vim pelo site e quero tirar uma d%C3%BAvida." class="fixed bottom-5 right-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-lg px-5 py-3" aria-label="Fale conosco no WhatsApp">WhatsApp</a>
+    <a href="https://wa.me/5513999999999?text=Ol%C3%A1! Vim pelo site e quero tirar uma d%C3%BAvida." class="group fixed bottom-5 right-5 bg-gradient-to-r from-teal-400 to-emerald-500 text-white rounded-full shadow-lg px-5 py-3 flex items-center gap-2" aria-label="Fale conosco no WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.77 11.77 0 0 0 12.06 0C5.5 0 .18 5.32.18 11.88c0 2.1.55 4.16 1.6 5.98L0 24l6.32-1.72a11.77 11.77 0 0 0 5.74 1.46h.01c6.56 0 11.88-5.32 11.88-11.88a11.77 11.77 0 0 0-3.44-8.38ZM12.06 21.3h-.01a9.43 9.43 0 0 1-4.8-1.31l-.34-.2-3.75 1.02 1-3.65-.22-.37a9.43 9.43 0 0 1-1.43-5.01c0-5.21 4.24-9.45 9.45-9.45 2.52 0 4.89.98 6.67 2.76a9.4 9.4 0 0 1 2.78 6.69c0 5.21-4.24 9.45-9.45 9.45Zm5.18-7.1c-.28-.14-1.67-.82-1.93-.92-.26-.1-.45-.14-.64.14-.19.28-.74.92-.91 1.1-.17.18-.34.2-.62.07-.28-.14-1.17-.43-2.23-1.36-.82-.73-1.37-1.64-1.53-1.92-.16-.28-.02-.43.12-.57.12-.12.28-.32.42-.48.14-.16.19-.28.29-.47.1-.19.05-.35-.02-.5-.07-.14-.64-1.54-.88-2.12-.23-.56-.47-.48-.64-.49h-.55c-.19 0-.5.07-
+.76.35-.26.28-.99.97-.99 2.36 0 1.39 1.02 2.73 1.16 2.92.14.19 2 3.05 4.85 4.28.68.29 1.21.46 1.62.59.68.22 1.3.19 1.8.11.55-.08 1.67-.68 1.9-1.34.23-.66.23-1.22.16-1.34-.07-.12-.26-.19-.54-.33Z"/></svg>
+      <span class="font-medium">WhatsApp</span>
+      <span class="absolute -z-10 h-14 w-14 rounded-full bg-emerald-400/40 blur-2xl animate-pulse"></span>
+    </a>
 
-    <!-- Scripts mínimos -->
+    <!-- Scripts -->
     <script>
       // Atualiza o ano automaticamente
       document.getElementById('year').textContent = new Date().getFullYear();
@@ -323,8 +387,13 @@
       // Mock de envio do formulário (substitua por integração real)
       document.getElementById('form-contato').addEventListener('submit', function (e) {
         e.preventDefault();
-        alert('Formulário de Exemplo');
       });
+
+      // Intersection Observer para revelar elementos ao rolar
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach((e)=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+      }, {threshold: 0.18});
+      document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
     </script>
   </body>
 </html>
