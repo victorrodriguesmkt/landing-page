@@ -5,34 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Clínica Sorriso Santos | Odontologia Integrada</title>
     <meta name="description" content="Clínica odontológica completa em Santos. Implantes, ortodontia, estética e atendimento humanizado. Agende sua avaliação." />
+    <link rel="icon" href="/favicon.ico" />
 
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- JSON-LD Schema -->
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
-      {
-        "@context":"https://schema.org",
-        "@type":"Dentist",
-        "name":"Clínica Sorriso Santos",
-        "address":{
-          "@type":"PostalAddress",
-          "streetAddress":"Av. Exemplo, 123",
-          "addressLocality":"Santos",
-          "addressRegion":"SP",
-          "postalCode":"11000-000",
-          "addressCountry":"BR"
-        },
-        "telephone":"+55 13 99999-9999",
-        "url":"https://victorrodriguesmkt.github.io/landing-page/",
-        "openingHours":"Mo-Fr 09:00-19:00",
-        "image":"https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop"
-      }
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Clínica Sorriso Santos",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Exemplo, 123",
+    "addressLocality": "Santos",
+    "addressRegion": "SP",
+    "postalCode": "11000-000",
+    "addressCountry": "BR"
+  },
+  "telephone": "+55 13 99999-9999",
+  "url": "https://exemplo.com",
+  "openingHours": "Mo-Fr 09:00-19:00",
+  "image": "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop"
+}
     </script>
+    <style>
+      /* Ajustes de foco para acessibilidade em teclas */
+      :focus-visible { outline: 2px solid #059669; outline-offset: 2px; }
+    </style>
   </head>
-  <body class="bg-white text-slate-800">
-    
-    <!-- Barra de aviso -->
+  <body class="min-h-screen bg-white text-slate-800">
+    <!-- Barra de Aviso -->
     <div class="w-full bg-emerald-600 text-white text-center text-sm py-2">
       Atendimento com hora marcada • Avaliação gratuita • Financiamento em até 24x
     </div>
@@ -56,15 +60,14 @@
             <a href="#contato" class="hover:text-emerald-700">Contato</a>
             <a href="#agendar" class="px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 transition">Agendar</a>
           </nav>
+          <a href="#agendar" class="md:hidden inline-flex px-3 py-2 rounded-lg bg-emerald-600 text-white">Agendar</a>
         </div>
       </div>
     </header>
 
     <!-- Hero -->
     <section class="relative overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2000&auto=format&fit=crop"
-        alt="Consultório odontológico moderno"
-        class="w-full h-[52vh] sm:h-[64vh] object-cover">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2000&auto=format&fit=crop" alt="Consultório odontológico moderno" class="w-full h-[52vh] sm:h-[64vh] object-cover" />
       <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
       <div class="absolute inset-0 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-10">
         <div class="text-white max-w-2xl">
@@ -82,42 +85,246 @@
       </div>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl sm:text-3xl font-semibold">Nossas especialidades</h2>
-      <p class="text-slate-600 mt-2 max-w-2xl">Tratamentos planejados com foco em estética, função e longevidade.</p>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="border rounded-2xl p-6 bg-white">
-          <h3 class="font-semibold text-lg">Implantes Dentários</h3>
-          <p class="text-sm text-slate-600 mt-2">Reposição fixa do dente com segurança e naturalidade.</p>
+    <!-- Provas rápidas -->
+    <section class="py-10 border-b bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
+          <p class="text-2xl font-bold text-emerald-700">15+</p>
+          <p class="text-xs text-slate-500 mt-1">Anos de experiência</p>
         </div>
-        <div class="border rounded-2xl p-6 bg-white">
-          <h3 class="font-semibold text-lg">Clareamento Dental</h3>
-          <p class="text-sm text-slate-600 mt-2">Técnicas em consultório e/ou moldeira para um sorriso mais branco.</p>
+        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
+          <p class="text-2xl font-bold text-emerald-700">8.000+</p>
+          <p class="text-xs text-slate-500 mt-1">Pacientes atendidos</p>
         </div>
-        <div class="border rounded-2xl p-6 bg-white">
-          <h3 class="font-semibold text-lg">Aparelho/Alinhadores</h3>
-          <p class="text-sm text-slate-600 mt-2">Ortodontia tradicional e alinhadores invisíveis.</p>
+        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
+          <p class="text-2xl font-bold text-emerald-700">4.9★</p>
+          <p class="text-xs text-slate-500 mt-1">Avaliação média</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-white shadow-sm border text-center">
+          <p class="text-2xl font-bold text-emerald-700">10+</p>
+          <p class="text-xs text-slate-500 mt-1">Especialidades</p>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section id="agendar" class="py-16 bg-slate-50 text-center">
-      <h2 class="text-2xl sm:text-3xl font-semibold">Agende sua avaliação</h2>
-      <p class="mt-2 text-slate-600">Envie seus dados que nossa equipe retorna confirmando.</p>
-      <div class="mt-6 flex justify-center gap-3">
-        <a href="https://wa.me/5513999999999?text=Olá! Quero agendar uma avaliação."
-          class="px-4 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700">WhatsApp</a>
-        <a href="tel:+551333000000" class="px-4 py-3 rounded-xl border">Ligar agora</a>
+    <!-- Serviços -->
+    <section id="servicos" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Nossas especialidades</h2>
+        <p class="text-slate-600 mt-2 max-w-2xl">Tratamentos planejados com foco em estética, função e longevidade. Escolha o que precisa ou fale com um especialista.</p>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Implantes Dentários</h3>
+            <p class="text-sm text-slate-600 mt-2">Reposição fixa do dente com segurança e naturalidade. Planejamento digital e carga imediata quando indicado.</p>
+            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
+          </div>
+          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Clareamento Dental</h3>
+            <p class="text-sm text-slate-600 mt-2">Técnicas em consultório e/ou moldeira. Sorriso mais branco de forma segura e supervisionada.</p>
+            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
+          </div>
+          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Aparelho/Alinhadores</h3>
+            <p class="text-sm text-slate-600 mt-2">Ortodontia tradicional e alinhadores invisíveis. Correção de posição com conforto e previsibilidade.</p>
+            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
+          </div>
+          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Lentes de Contato</h3>
+            <p class="text-sm text-slate-600 mt-2">Facetas estéticas para formato, cor e harmonia do sorriso. Resultado rápido com mínimo desgaste.</p>
+            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
+          </div>
+          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Endodontia (Canal)</h3>
+            <p class="text-sm text-slate-600 mt-2">Tratamento de canal com microscopia e anestesia computadorizada para máximo conforto.</p>
+            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
+          </div>
+          <div class="group border rounded-2xl p-6 hover:shadow-lg transition bg-white">
+            <h3 class="font-semibold text-lg">Odontopediatria</h3>
+            <p class="text-sm text-slate-600 mt-2">Acolhimento lúdico e preventivo para as crianças. Adaptação gradual e orientação aos pais.</p>
+            <a href="#agendar" class="inline-block mt-4 text-emerald-700 hover:text-emerald-800 text-sm font-medium">Agendar consulta →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+        <img src="https://images.unsplash.com/photo-1583912267550-5660ab1614a7?q=80&w=1400&auto=format&fit=crop" alt="Equipe atendendo paciente" class="rounded-3xl object-cover w-full h-80" />
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-semibold">Humanização + tecnologia</h2>
+          <p class="text-slate-600 mt-3">Da recepção ao pós-atendimento, cada etapa foi pensada para que você se sinta seguro(a) e bem cuidado(a). Utilizamos scanners intraorais, radiografia digital e protocolos minimamente invasivos.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-700">
+            <li>• Avaliação detalhada e plano de tratamento personalizado</li>
+            <li>• Opções de pagamento flexíveis e parcelamento</li>
+            <li>• Estrutura acessível e horário estendido</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Conheça nossa equipe</h2>
+        <p class="text-slate-600 mt-2">Especialistas comprometidos com qualidade clínica e atendimento acolhedor.</p>
+        <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="border rounded-2xl overflow-hidden bg-white">
+            <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=800&auto=format&fit=crop" alt="Dra. Ana Ribeiro" class="w-full h-56 object-cover" />
+            <div class="p-5">
+              <p class="font-semibold">Dra. Ana Ribeiro</p>
+              <p class="text-sm text-slate-600">Implantodontia | CRO 00000</p>
+            </div>
+          </div>
+          <div class="border rounded-2xl overflow-hidden bg-white">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=800&auto=format&fit=crop" alt="Dr. Pedro Costa" class="w-full h-56 object-cover" />
+            <div class="p-5">
+              <p class="font-semibold">Dr. Pedro Costa</p>
+              <p class="text-sm text-slate-600">Ortodontia | CRO 00000</p>
+            </div>
+          </div>
+          <div class="border rounded-2xl overflow-hidden bg-white">
+            <img src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=800&auto=format&fit=crop" alt="Dra. Luiza Martins" class="w-full h-56 object-cover" />
+            <div class="p-5">
+              <p class="font-semibold">Dra. Luiza Martins</p>
+              <p class="text-sm text-slate-600">Estética | CRO 00000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="depoimentos" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold">O que nossos pacientes dizem</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <div class="bg-white border rounded-2xl p-6">
+            <p class="text-sm text-emerald-700 font-medium">Clareamento e limpeza</p>
+            <p class="mt-2 text-slate-700">“Atendimento impecável do início ao fim. Resultado além do esperado!”</p>
+            <p class="mt-4 text-sm text-slate-500">— Mariana S.</p>
+          </div>
+          <div class="bg-white border rounded-2xl p-6">
+            <p class="text-sm text-emerald-700 font-medium">Implante unitário</p>
+            <p class="mt-2 text-slate-700">“Procedimento super tranquilo. Equipe atenciosa e estrutura moderna.”</p>
+            <p class="mt-4 text-sm text-slate-500">— Ricardo L.</p>
+          </div>
+          <div class="bg-white border rounded-2xl p-6">
+            <p class="text-sm text-emerald-700 font-medium">Alinhadores</p>
+            <p class="mt-2 text-slate-700">“Acompanhamento próximo e didático. Em poucas semanas já senti diferença.”</p>
+            <p class="mt-4 text-sm text-slate-500">— Beatriz A.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos / CTA -->
+    <section id="agendar" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-10 items-center">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-semibold">Agende sua avaliação</h2>
+            <p class="mt-2 text-slate-600">Envie seus dados que nossa equipe retornará confirmando dia e horário. Se preferir, chame no WhatsApp.</p>
+            <div class="mt-6 p-5 border rounded-2xl bg-slate-50">
+              <p class="text-sm text-slate-600">Horários: Seg a Sex, 9h às 19h • Sáb, 9h às 13h</p>
+              <p class="text-sm text-slate-600">Endereço: Av. Exemplo, 123 – Gonzaga, Santos/SP</p>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <!-- TODO: Substitua o número pelo oficial da clínica -->
+              <a href="https://wa.me/5513999999999?text=Ol%C3%A1! Quero agendar uma avaliação." class="px-4 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700">WhatsApp</a>
+              <a href="tel:+551333000000" class="px-4 py-3 rounded-xl border">Ligar agora</a>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+          <form id="form-contato" class="bg-white border rounded-2xl p-6 shadow-sm" action="#" method="post">
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div>
+                <label for="nome" class="text-sm text-slate-600">Nome</label>
+                <input id="nome" name="nome" type="text" required class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Seu nome" />
+              </div>
+              <div>
+                <label for="telefone" class="text-sm text-slate-600">Telefone/WhatsApp</label>
+                <input id="telefone" name="telefone" type="tel" required class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="(13) 9 0000-0000" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="servico" class="text-sm text-slate-600">Serviço de interesse</label>
+                <select id="servico" name="servico" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                  <option>Selecione…</option>
+                  <option>Implantes</option>
+                  <option>Clareamento</option>
+                  <option>Alinhadores</option>
+                  <option>Endodontia (Canal)</option>
+                  <option>Odontopediatria</option>
+                  <option>Outros</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="mensagem" class="text-sm text-slate-600">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" rows="4" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="Conte rapidamente sua necessidade"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="mt-4 w-full rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white py-3">Enviar</button>
+            <p class="text-xs text-slate-500 mt-2">Ao enviar, você concorda com nossa política de privacidade.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-semibold">Como chegar</h2>
+        <p class="text-slate-600 mt-2">Estamos no coração de Santos, com fácil acesso e estacionamento conveniado.</p>
+        <div class="mt-6 aspect-video w-full rounded-2xl overflow-hidden border">
+          <!-- TODO: Substitua o src pelo embed do Google Maps da clínica -->
+          <iframe title="Mapa da clínica" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.501679507749!2d-46.6388239!3d-23.5505199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzAyLjEiUyA0NsKwMzgnMjMuNyJX!5e0!3m2!1spt-BR!2sbr!4v1711212121212" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t text-center">
-      <p class="font-semibold">Clínica Sorriso Santos</p>
-      <p class="text-sm text-slate-600 mt-2">Cuidamos do seu sorriso com tecnologia, segurança e carinho.</p>
-      <p class="text-xs text-slate-500 mt-4">© 2025 Clínica Sorriso Santos. Todos os direitos reservados.</p>
+    <footer id="contato" class="py-12 border-t">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+        <div>
+          <p class="font-semibold">Clínica Sorriso Santos</p>
+          <p class="text-sm text-slate-600 mt-2">Cuidamos do seu sorriso com tecnologia, segurança e carinho.</p>
+          <p class="text-xs text-slate-500 mt-4">© <span id="year"></span> Clínica Sorriso Santos. Todos os direitos reservados.</p>
+        </div>
+        <div>
+          <p class="font-medium">Contato</p>
+          <ul class="text-sm text-slate-600 mt-2 space-y-1">
+            <li>WhatsApp: (13) 9 9999-9999</li>
+            <li>Telefone: (13) 3300-0000</li>
+            <li>Email: contato@exemplo.com</li>
+            <li>Endereço: Av. Exemplo, 123 – Santos/SP</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-medium">Links rápidos</p>
+          <ul class="text-sm text-slate-600 mt-2 space-y-1">
+            <li><a class="hover:text-emerald-700" href="#servicos">Serviços</a></li>
+            <li><a class="hover:text-emerald-700" href="#sobre">Sobre</a></li>
+            <li><a class="hover:text-emerald-700" href="#equipe">Equipe</a></li>
+            <li><a class="hover:text-emerald-700" href="#agendar">Agendar</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
+
+    <!-- Botão flutuante WhatsApp -->
+    <a href="https://wa.me/5513999999999?text=Ol%C3%A1! Vim pelo site e quero tirar uma d%C3%BAvida." class="fixed bottom-5 right-5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full shadow-lg px-5 py-3" aria-label="Fale conosco no WhatsApp">WhatsApp</a>
+
+    <!-- Scripts mínimos -->
+    <script>
+      // Atualiza o ano automaticamente
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mock de envio do formulário (substitua por integração real)
+      document.getElementById('form-contato').addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Formulário de Exemplo');
+      });
+    </script>
   </body>
 </html>
