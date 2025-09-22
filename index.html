@@ -209,7 +209,7 @@
           </details>
         </div>
       </div>
-      
+
       <!-- Contato -->
 <section id="contato" class="py-20 bg-gradient-to-br from-[#f9fdfc] to-[#fefefe]">
   <div class="max-w-3xl mx-auto px-4 text-center">
@@ -217,7 +217,7 @@
     <p class="mt-2 text-slate-600">Preencha o formulário que nossa equipe entrará em contato para confirmar o horário.</p>
 
     <!-- Formulário -->
-    <form class="mt-10 p-8 rounded-3xl bg-white shadow-md reveal space-y-4 text-left">
+    <form id="form-contato" class="mt-10 p-8 rounded-3xl bg-white shadow-md reveal space-y-4 text-left">
       <div>
         <label for="nome" class="text-sm text-slate-600">Nome</label>
         <input id="nome" type="text" placeholder="Seu nome" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:ring-2 focus:ring-teal-500" required />
@@ -249,6 +249,20 @@
   </div>
 </section>
 
+<!-- Popup de confirmação -->
+<div id="popup" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-3xl shadow-lg p-8 max-w-sm text-center animate-fadeIn">
+    <div class="mx-auto h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
+      ✅
+    </div>
+    <h3 class="mt-4 text-xl font-semibold text-slate-800">Mensagem enviada!</h3>
+    <p class="mt-2 text-slate-600 text-sm">Nossa equipe entrará em contato em breve para confirmar sua avaliação.</p>
+    <button id="fecharPopup" class="mt-6 px-5 py-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white shadow hover:opacity-90">
+      Fechar
+    </button>
+  </div>
+</div>
+
 <!-- Localização e informações -->
 <section id="localizacao" class="py-20 bg-gradient-to-br from-white to-[#fafafa]">
   <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
@@ -275,19 +289,31 @@
     </div>
   </div>
 </section>
+<!-- Script -->
+<script>
+  const form = document.getElementById("form-contato");
+  const popup = document.getElementById("popup");
+  const fecharPopup = document.getElementById("fecharPopup");
 
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); // evita envio real
+    popup.classList.remove("hidden"); // mostra popup
+    form.reset(); // limpa formulário
+  });
 
-    <!-- Footer -->
-    <footer class="py-12 border-t bg-white/80 text-center text-sm text-slate-600">
-      © <span id="year"></span> Clínica Sorriso. Todos os direitos reservados.
-    </footer>
+  fecharPopup.addEventListener("click", ()=> popup.classList.add("hidden"));
+</script>
 
-    <!-- Scripts -->
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-      const io = new IntersectionObserver((entries)=>{entries.forEach((e)=>{if(e.isIntersecting){e.target.classList.add('show'); io.unobserve(e.target)}})}, {threshold:0.15});
-      document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-    </script>
+<style>
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out;
+  }
+</style>
   </body>
 </html>
+
 
