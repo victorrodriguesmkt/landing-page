@@ -17,10 +17,13 @@
     <meta property="og:type" content="website" />
 
     <style>
-      html{scroll-behavior:smooth}
-      .reveal{opacity:0; transform: translateY(16px); transition: all .7s ease}
-      .reveal.show{opacity:1; transform: translateY(0)}
-      @media (prefers-reduced-motion: reduce){ .reveal{opacity:1; transform:none} }
+      html { scroll-behavior: smooth; }
+      .reveal { opacity: 0; transform: translateY(16px); transition: all .7s ease }
+      .reveal.show { opacity: 1; transform: translateY(0) }
+      @media (prefers-reduced-motion: reduce){ .reveal { opacity:1; transform:none } }
+      @keyframes fadeIn { from {opacity:0; transform: translateY(10px)} to {opacity:1; transform: translateY(0)} }
+      .animate-fadeIn { animation: fadeIn .35s ease-out }
+      :focus-visible { outline:2px solid #10b981; outline-offset: 3px }
     </style>
   </head>
   <body class="min-h-screen bg-gradient-to-br from-[#fafafa] via-[#f7fbff] to-[#fef6f6] text-slate-800">
@@ -54,13 +57,15 @@
       </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero (cor no estilo que você pediu) -->
     <section class="relative overflow-hidden">
-      <div class="w-full h-[56vh] sm:h-[68vh] bg-gradient-to-br from-teal-100 via-sky-100 to-emerald-100"></div>
+      <div class="w-full h-[56vh] sm:h-[68vh] bg-gradient-to-br from-[#c1e6cf] via-[#8bd3dd] to-[#fde2e4]"></div>
       <div class="absolute inset-0 flex items-center justify-center">
         <div class="text-center text-slate-800 max-w-2xl px-6">
-          <h1 class="text-4xl sm:text-6xl font-bold leading-tight">Sorria com leveza.<span class="block text-teal-600">Odontologia humana + tecnologia.</span></h1>
-          <p class="mt-4 text-base sm:text-lg text-slate-600">Implantes, ortodontia e estética em um só lugar, com experiência acolhedora em Santos.</p>
+          <h1 class="text-4xl sm:text-6xl font-bold leading-tight">Sorria com leveza.
+            <span class="block text-teal-700">Odontologia humana + tecnologia.</span>
+          </h1>
+          <p class="mt-4 text-base sm:text-lg text-slate-700">Implantes, ortodontia e estética em um só lugar, com experiência acolhedora em Santos.</p>
           <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#contato" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white font-medium shadow-lg">Agendar avaliação</a>
             <a href="#servicos" class="px-6 py-3 rounded-2xl border border-teal-300 text-teal-700 font-medium">Conhecer serviços</a>
@@ -73,247 +78,280 @@
     <section id="servicos" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl sm:text-4xl font-semibold">Nossas especialidades</h2>
+        <p class="text-slate-600 mt-2 max-w-2xl">Tratamentos planejados com foco em estética, função e longevidade.</p>
+
         <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#eef7f8]"></div>
+          <article class="group overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <div class="h-44 w-full rounded-2xl bg-[#eef7f8]"></div>
             <h3 class="mt-4 font-semibold text-lg">Implantes Dentários</h3>
             <p class="text-sm text-slate-600 mt-2">Reposição fixa do dente com segurança e naturalidade.</p>
-          </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#fff6f7]"></div>
+          </article>
+          <article class="group overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <div class="h-44 w-full rounded-2xl bg-[#fff6f7]"></div>
             <h3 class="mt-4 font-semibold text-lg">Clareamento Dental</h3>
             <p class="text-sm text-slate-600 mt-2">Sorriso mais branco de forma segura e supervisionada.</p>
-          </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#eef7ff]"></div>
+          </article>
+          <article class="group overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <div class="h-44 w-full rounded-2xl bg-[#eef7ff]"></div>
             <h3 class="mt-4 font-semibold text-lg">Aparelhos e Alinhadores</h3>
             <p class="text-sm text-slate-600 mt-2">Ortodontia tradicional e alinhadores invisíveis.</p>
-          </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#fff2f3]"></div>
+          </article>
+          <article class="group overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <div class="h-44 w-full rounded-2xl bg-[#fff2f3]"></div>
             <h3 class="mt-4 font-semibold text-lg">Lentes de Contato</h3>
-            <p class="text-sm text-slate-600 mt-2">Facetas estéticas para formato, cor e harmonia.</p>
-          </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#eefaf3]"></div>
+            <p class="text-sm text-slate-600 mt-2">Facetas estéticas para harmonia do sorriso.</p>
+          </article>
+          <article class="group overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <div class="h-44 w-full rounded-2xl bg-[#eefaf3]"></div>
             <h3 class="mt-4 font-semibold text-lg">Endodontia (Canal)</h3>
             <p class="text-sm text-slate-600 mt-2">Tratamento de canal com máximo conforto.</p>
-          </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#f6fbff]"></div>
+          </article>
+          <article class="group overflow-hidden rounded-3xl bg-white p-6 shadow-sm ring-1 ring-black/5 transition hover:-translate-y-1 hover:shadow-md reveal">
+            <div class="h-44 w-full rounded-2xl bg-[#f6fbff]"></div>
             <h3 class="mt-4 font-semibold text-lg">Odontopediatria</h3>
             <p class="text-sm text-slate-600 mt-2">Atendimento lúdico e preventivo para crianças.</p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Sobre -->
     <section id="sobre" class="py-20 bg-gradient-to-br from-white to-[#faf6f7]">
-      <div class="max-w-5xl mx-auto px-4 text-center reveal">
-        <div class="h-64 rounded-3xl bg-[#e6f7f9] mx-auto"></div>
-        <h2 class="text-3xl sm:text-4xl font-semibold mt-8">Humanização e tecnologia</h2>
-        <p class="mt-4 text-slate-600">Nossa estrutura foi projetada para unir acolhimento humano com equipamentos de ponta, garantindo conforto, segurança e resultados duradouros.</p>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+        <div class="reveal order-2 md:order-1">
+          <h2 class="text-3xl sm:text-4xl font-semibold">Humanização e tecnologia em cada detalhe</h2>
+          <p class="text-slate-600 mt-4 leading-relaxed">Acreditamos que um sorriso saudável vai além da estética: é qualidade de vida. Nossa estrutura une acolhimento humano com equipamentos de ponta, garantindo conforto, segurança e resultados duradouros.</p>
+          <ul class="mt-6 space-y-3 text-sm text-slate-700">
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Atendimento personalizado desde a primeira consulta</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Protocolos modernos e minimamente invasivos</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Ambientes confortáveis e acessíveis</li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-teal-400"></span> Equipe qualificada para todas as especialidades</li>
+          </ul>
+        </div>
+        <div class="relative order-1 md:order-2 reveal">
+          <div class="rounded-3xl w-full h-96 bg-[#e6f7f9] shadow-lg"></div>
+          <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-md max-w-[240px]">
+            <p class="text-sm font-semibold text-slate-700">+15 anos de confiança</p>
+            <p class="text-xs text-slate-500">Mais de 8.000 sorrisos transformados</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Equipe -->
     <section id="equipe" class="py-20">
-      <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-3xl sm:text-4xl font-semibold">Nossa equipe</h2>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-semibold">Conheça nossa equipe</h2>
+        <p class="text-slate-600 mt-2">Especialistas comprometidos com qualidade clínica e atendimento acolhedor.</p>
         <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#eef7ff]"></div>
-            <p class="mt-4 font-semibold">Dra. Ana Ribeiro</p>
-            <p class="text-sm text-slate-600">Implantodontia</p>
+          <div class="border rounded-3xl overflow-hidden bg-white shadow-sm reveal">
+            <div class="w-full h-56 bg-[#eef7ff]"></div>
+            <div class="p-5"><p class="font-semibold">Dra. Ana Ribeiro</p><p class="text-sm text-slate-600">Implantodontia | CRO 12345</p></div>
           </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#fff6f7]"></div>
-            <p class="mt-4 font-semibold">Dr. Pedro Costa</p>
-            <p class="text-sm text-slate-600">Ortodontia</p>
+          <div class="border rounded-3xl overflow-hidden bg-white shadow-sm reveal">
+            <div class="w-full h-56 bg-[#fff6f7]"></div>
+            <div class="p-5"><p class="font-semibold">Dra. Priscila Costa</p><p class="text-sm text-slate-600">Ortodontia | CRO 23456</p></div>
           </div>
-          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-            <div class="h-44 rounded-2xl bg-[#eefaf3]"></div>
-            <p class="mt-4 font-semibold">Dra. Luiza Martins</p>
-            <p class="text-sm text-slate-600">Estética</p>
+          <div class="border rounded-3xl overflow-hidden bg-white shadow-sm reveal">
+            <div class="w-full h-56 bg-[#eefaf3]"></div>
+            <div class="p-5"><p class="font-semibold">Dra. Luiza Martins</p><p class="text-sm text-slate-600">Estética | CRO 34567</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Depoimentos -->
-<section id="depoimentos" class="py-20 bg-gradient-to-br from-[#f9fdfc] to-[#fefefe]">
-  <div class="max-w-7xl mx-auto px-4 text-center">
-    <h2 class="text-3xl sm:text-4xl font-semibold">O que nossos pacientes dizem</h2>
-    <p class="mt-2 text-slate-600">A experiência de quem já cuidou do sorriso com a gente.</p>
+    <!-- Depoimentos (6 clientes) -->
+    <section id="depoimentos" class="py-20 bg-gradient-to-br from-[#f9fdfc] to-[#fefefe]">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-3xl sm:text-4xl font-semibold">O que nossos pacientes dizem</h2>
+        <p class="mt-2 text-slate-600">A experiência de quem já cuidou do sorriso com a gente.</p>
 
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      
-      <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-        <div class="h-20 w-20 mx-auto rounded-full bg-[#eefaf3]"></div>
-        <p class="mt-4 font-medium">Cliente A</p>
-        <p class="text-sm text-slate-600 mt-2">“Atendimento impecável do início ao fim.”</p>
+        <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
+            <div class="h-20 w-20 mx-auto rounded-full bg-[#eefaf3]"></div>
+            <p class="mt-4 font-medium">Cliente A</p>
+            <p class="text-sm text-slate-600 mt-2">“Atendimento impecável do início ao fim.”</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
+            <div class="h-20 w-20 mx-auto rounded-full bg-[#eef7ff]"></div>
+            <p class="mt-4 font-medium">Cliente B</p>
+            <p class="text-sm text-slate-600 mt-2">“Equipe super atenciosa e estrutura moderna.”</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
+            <div class="h-20 w-20 mx-auto rounded-full bg-[#fff6f7]"></div>
+            <p class="mt-4 font-medium">Cliente C</p>
+            <p class="text-sm text-slate-600 mt-2">“Me senti muito bem acolhido em todas as consultas.”</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
+            <div class="h-20 w-20 mx-auto rounded-full bg-[#f6fbff]"></div>
+            <p class="mt-4 font-medium">Cliente D</p>
+            <p class="text-sm text-slate-600 mt-2">“Profissionais qualificados e resultado incrível.”</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
+            <div class="h-20 w-20 mx-auto rounded-full bg-[#eefaf3]"></div>
+            <p class="mt-4 font-medium">Cliente E</p>
+            <p class="text-sm text-slate-600 mt-2">“O sorriso ficou perfeito, recomendo a todos.”</p>
+          </div>
+          <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
+            <div class="h-20 w-20 mx-auto rounded-full bg-[#fff2f3]"></div>
+            <p class="mt-4 font-medium">Cliente F</p>
+            <p class="text-sm text-slate-600 mt-2">“Ambiente confortável e atendimento diferenciado.”</p>
+          </div>
+        </div>
       </div>
-
-      <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-        <div class="h-20 w-20 mx-auto rounded-full bg-[#eef7ff]"></div>
-        <p class="mt-4 font-medium">Cliente B</p>
-        <p class="text-sm text-slate-600 mt-2">“Equipe super atenciosa e estrutura moderna.”</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-        <div class="h-20 w-20 mx-auto rounded-full bg-[#fff6f7]"></div>
-        <p class="mt-4 font-medium">Cliente C</p>
-        <p class="text-sm text-slate-600 mt-2">“Me senti muito bem acolhido em todas as consultas.”</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-        <div class="h-20 w-20 mx-auto rounded-full bg-[#f6fbff]"></div>
-        <p class="mt-4 font-medium">Cliente D</p>
-        <p class="text-sm text-slate-600 mt-2">“Profissionais qualificados e resultado incrível.”</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-        <div class="h-20 w-20 mx-auto rounded-full bg-[#eefaf3]"></div>
-        <p class="mt-4 font-medium">Cliente E</p>
-        <p class="text-sm text-slate-600 mt-2">“O sorriso ficou perfeito, recomendo a todos.”</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-3xl shadow-sm reveal">
-        <div class="h-20 w-20 mx-auto rounded-full bg-[#fff2f3]"></div>
-        <p class="mt-4 font-medium">Cliente F</p>
-        <p class="text-sm text-slate-600 mt-2">“Ambiente confortável e atendimento diferenciado.”</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- FAQ -->
     <section id="duvidas" class="py-20">
-      <div class="max-w-5xl mx-auto px-4">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl sm:text-4xl font-semibold">Dúvidas frequentes</h2>
-        <div class="mt-8 divide-y rounded-2xl border bg-white/70">
+        <div class="mt-8 divide-y rounded-2xl border bg-white/70 ring-1 ring-black/5">
           <details class="p-5" open>
             <summary class="cursor-pointer font-medium">Como funciona a avaliação inicial?</summary>
-            <p class="mt-3 text-sm text-slate-600">Fazemos anamnese, fotos e planejamento preliminar.</p>
+            <p class="mt-3 text-sm text-slate-600">Fazemos anamnese, fotos e planejamento preliminar. Se necessário, solicitamos exames para diagnóstico preciso.</p>
           </details>
           <details class="p-5">
             <summary class="cursor-pointer font-medium">Vocês parcelam os tratamentos?</summary>
-            <p class="mt-3 text-sm text-slate-600">Sim, com condições especiais conforme o plano de tratamento.</p>
+            <p class="mt-3 text-sm text-slate-600">Sim. Parcelamento e condições especiais conforme o plano de tratamento.</p>
           </details>
           <details class="p-5">
             <summary class="cursor-pointer font-medium">Atendem crianças?</summary>
-            <p class="mt-3 text-sm text-slate-600">Sim, temos odontopediatra e protocolo lúdico.</p>
+            <p class="mt-3 text-sm text-slate-600">Sim, temos odontopediatra e protocolo de ambientação lúdica.</p>
           </details>
         </div>
       </div>
+    </section>
 
-      <!-- Contato -->
-<section id="contato" class="py-20 bg-gradient-to-br from-[#f9fdfc] to-[#fefefe]">
-  <div class="max-w-3xl mx-auto px-4 text-center">
-    <h2 class="text-3xl sm:text-4xl font-semibold">Agende sua avaliação</h2>
-    <p class="mt-2 text-slate-600">Preencha o formulário que nossa equipe entrará em contato para confirmar o horário.</p>
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-gradient-to-br from-[#f9fdfc] to-[#fefefe]">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl sm:text-4xl font-semibold">Agende sua avaliação</h2>
+        <p class="mt-2 text-slate-600">Preencha o formulário e nossa equipe retornará para confirmar o horário.</p>
 
-    <!-- Formulário -->
-    <form id="form-contato" class="mt-10 p-8 rounded-3xl bg-white shadow-md reveal space-y-4 text-left">
-      <div>
-        <label for="nome" class="text-sm text-slate-600">Nome</label>
-        <input id="nome" type="text" placeholder="Seu nome" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:ring-2 focus:ring-teal-500" required />
-      </div>
-      <div>
-        <label for="telefone" class="text-sm text-slate-600">Telefone / WhatsApp</label>
-        <input id="telefone" type="tel" placeholder="(13) 9 0000-0000" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:ring-2 focus:ring-teal-500" required />
-      </div>
-      <div>
-        <label for="servico" class="text-sm text-slate-600">Serviço de interesse</label>
-        <select id="servico" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:ring-2 focus:ring-teal-500" required>
-          <option>Selecione...</option>
-          <option>Implantes</option>
-          <option>Clareamento</option>
-          <option>Aparelhos</option>
-          <option>Odontopediatria</option>
-          <option>Outros</option>
-        </select>
-      </div>
-      <div>
-        <label for="mensagem" class="text-sm text-slate-600">Mensagem</label>
-        <textarea id="mensagem" rows="4" placeholder="Conte rapidamente sua necessidade" class="mt-1 w-full rounded-2xl border px-3 py-2 focus:ring-2 focus:ring-teal-500"></textarea>
-      </div>
-      <button type="submit" class="w-full rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-500 hover:opacity-90 text-white py-3 font-medium shadow">
-        Enviar mensagem
-      </button>
-      <p class="text-xs text-slate-500 text-center mt-2">Ao enviar, você concorda com nossa política de privacidade.</p>
-    </form>
-  </div>
-</section>
+        <!-- Formulário -->
+        <form id="form-agendamento" class="mt-10 p-8 rounded-3xl bg-white shadow-md ring-1 ring-black/5 reveal space-y-4 text-left" action="#" method="post" novalidate>
+          <div>
+            <label for="nome" class="text-sm text-slate-600">Nome</label>
+            <input id="nome" name="nome" type="text" required
+                   class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                   placeholder="Seu nome" />
+          </div>
+          <div>
+            <label for="telefone" class="text-sm text-slate-600">Telefone / WhatsApp</label>
+            <input id="telefone" name="telefone" type="tel" required
+                   class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                   placeholder="(13) 9 0000-0000" />
+          </div>
+          <div>
+            <label for="servico" class="text-sm text-slate-600">Serviço de interesse</label>
+            <select id="servico" name="servico" required
+                    class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500">
+              <option value="">Selecione…</option>
+              <option>Implantes</option>
+              <option>Clareamento</option>
+              <option>Aparelhos / Alinhadores</option>
+              <option>Endodontia (Canal)</option>
+              <option>Odontopediatria</option>
+              <option>Outros</option>
+            </select>
+          </div>
+          <div>
+            <label for="mensagem" class="text-sm text-slate-600">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4"
+                      class="mt-1 w-full rounded-2xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      placeholder="Conte rapidamente sua necessidade"></textarea>
+          </div>
 
-<!-- Popup de confirmação -->
-<div id="popup" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-3xl shadow-lg p-8 max-w-sm text-center animate-fadeIn">
-    <div class="mx-auto h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">
-      ✅
+          <button type="submit"
+                  class="w-full rounded-2xl bg-gradient-to-r from-teal-400 to-emerald-500 hover:opacity-90 text-white py-3 font-medium shadow">
+            Enviar mensagem
+          </button>
+          <p class="text-xs text-slate-500 text-center mt-2">Ao enviar, você concorda com nossa política de privacidade.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Popup de confirmação -->
+    <div id="popup" class="fixed inset-0 bg-black/50 flex items-center justify-center hidden z-50">
+      <div class="bg-white rounded-3xl shadow-lg p-8 max-w-sm text-center animate-fadeIn">
+        <div class="mx-auto h-16 w-16 rounded-full bg-green-100 flex items-center justify-center">✅</div>
+        <h3 class="mt-4 text-xl font-semibold text-slate-800">Mensagem enviada!</h3>
+        <p class="mt-2 text-slate-600 text-sm">Nossa equipe entrará em contato em breve para confirmar sua avaliação.</p>
+        <button id="fecharPopup" class="mt-6 px-5 py-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white shadow hover:opacity-90">
+          Fechar
+        </button>
+      </div>
     </div>
-    <h3 class="mt-4 text-xl font-semibold text-slate-800">Mensagem enviada!</h3>
-    <p class="mt-2 text-slate-600 text-sm">Nossa equipe entrará em contato em breve para confirmar sua avaliação.</p>
-    <button id="fecharPopup" class="mt-6 px-5 py-2 rounded-xl bg-gradient-to-r from-teal-400 to-emerald-500 text-white shadow hover:opacity-90">
-      Fechar
-    </button>
-  </div>
-</div>
 
-<!-- Localização e informações -->
-<section id="localizacao" class="py-20 bg-gradient-to-br from-white to-[#fafafa]">
-  <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
-    
-    <!-- Mapa -->
-<div class="rounded-3xl overflow-hidden shadow-md ring-1 ring-black/5 h-[400px]">
-  <iframe title="Mapa da clínica" 
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.095244874015!2d-46.63619468442553!3d-23.552889684690033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c2f3b38f15%3A0x9b66aa9e0df5afc1!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
-    class="w-full h-full" loading="lazy" style="border:0;" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</div>
+    <!-- Localização e informações -->
+    <section id="localizacao" class="py-20 bg-gradient-to-br from-white to-[#fafafa]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
+        <!-- Mapa (OpenStreetMap para não quebrar) -->
+        <div class="rounded-3xl overflow-hidden shadow-md ring-1 ring-black/5 h-[400px] bg-white">
+          <iframe
+            title="Mapa da clínica - Santos/SP"
+            class="w-full h-full"
+            style="border:0"
+            loading="lazy"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-46.339%2C-24.045%2C-46.170%2C-23.880&layer=mapnik&marker=-23.960%2C-46.328">
+          </iframe>
+        </div>
 
+        <!-- Informações -->
+        <div class="space-y-4 reveal">
+          <h3 class="text-2xl font-semibold">Informações da Clínica</h3>
+          <p class="text-slate-600">Estamos no coração de Santos, com fácil acesso e estacionamento conveniado.</p>
+          <ul class="space-y-3 text-slate-700 text-sm">
+            <li class="flex items-center gap-3">
+              <span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#eefaf3] text-teal-600">⏰</span>
+              Seg a Sex: 9h às 19h • Sáb: 9h às 13h
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#eef7ff] text-sky-600">📍</span>
+              Av. Exemplo, 123 – Gonzaga, Santos/SP
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#fff6f7] text-rose-500">📞</span>
+              (13) 3300-0000
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#f6fbff] text-emerald-600">💬</span>
+              <a href="https://wa.me/5513999999999" class="text-teal-700 font-medium hover:underline">Fale no WhatsApp</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-    <!-- Informações -->
-    <div class="space-y-4 reveal">
-      <h3 class="text-2xl font-semibold">Informações da Clínica</h3>
-      <p class="text-slate-600">Estamos no coração de Santos, com fácil acesso e estacionamento conveniado.</p>
-      <ul class="space-y-3 text-slate-700 text-sm">
-        <li class="flex items-center gap-3"><span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#eefaf3] text-teal-600">⏰</span>Seg a Sex: 9h às 19h • Sáb: 9h às 13h</li>
-        <li class="flex items-center gap-3"><span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#eef7ff] text-sky-600">📍</span>Av. Exemplo, 123 – Gonzaga, Santos/SP</li>
-        <li class="flex items-center gap-3"><span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#fff6f7] text-rose-500">📞</span>(13) 3300-0000</li>
-        <li class="flex items-center gap-3"><span class="h-8 w-8 flex items-center justify-center rounded-lg bg-[#f6fbff] text-emerald-600">💬</span><a href="https://wa.me/5513999999999" class="text-teal-700 font-medium hover:underline">Fale no WhatsApp</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
-<!-- Script -->
-<script>
-  const form = document.getElementById("form-contato");
-  const popup = document.getElementById("popup");
-  const fecharPopup = document.getElementById("fecharPopup");
+    <!-- Footer -->
+    <footer class="py-12 border-t bg-white/80 text-center text-sm text-slate-600">
+      © <span id="year"></span> Clínica Sorriso. Todos os direitos reservados.
+    </footer>
 
-  form.addEventListener("submit", function(e){
-    e.preventDefault(); // evita envio real
-    popup.classList.remove("hidden"); // mostra popup
-    form.reset(); // limpa formulário
-  });
+    <!-- Scripts -->
+    <script>
+      // Ano automático
+      document.getElementById('year').textContent = new Date().getFullYear();
 
-  fecharPopup.addEventListener("click", ()=> popup.classList.add("hidden"));
-</script>
+      // Reveal on scroll
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach((e)=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); } });
+      }, {threshold: 0.15});
+      document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
 
-<style>
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .animate-fadeIn {
-    animation: fadeIn 0.4s ease-out;
-  }
-</style>
+      // Popup do formulário
+      const form = document.getElementById("form-agendamento");
+      const popup = document.getElementById("popup");
+      const fecharPopup = document.getElementById("fecharPopup");
+
+      if (form) {
+        form.addEventListener("submit", function(e){
+          e.preventDefault(); // evita envio real
+          popup.classList.remove("hidden"); // mostra popup
+          form.reset(); // limpa
+        });
+      }
+      fecharPopup?.addEventListener("click", ()=> popup.classList.add("hidden"));
+    </script>
   </body>
 </html>
-
-
